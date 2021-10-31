@@ -1,22 +1,42 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef GAME_VIEW_H
+#define GAME_VIEW_H
 
+#include <QDebug>
 #include <QFrame>
+#include <memory>
+
+#include "board_view.h"
+#include "game_logic.h"
+#include "player_enum.h"
+#include "player_int.h"
 
 namespace Ui {
-class game;
+class game_view;
 }
 
-class game : public QFrame
-{
-    Q_OBJECT
+class game_logic;
 
-public:
-    explicit game(QWidget *parent = nullptr);
-    ~game();
+class game_view : public QFrame {
+  Q_OBJECT
 
-private:
-    Ui::game *ui;
+ public:
+  explicit game_view(QWidget *parent = nullptr);
+
+  ~game_view();
+
+  void connect_to_logic(std::shared_ptr<game_logic> &gl);
+  void connect_components();
+
+ private slots:
+  void on_new_game_button_clicked();
+
+ signals:
+  void new_game_button_clicked();
+
+ private:
+  Ui::game_view *ui;
+
+  std::shared_ptr<game_logic> gl;
 };
 
-#endif // GAME_H
+#endif  // GAME_VIEW_H

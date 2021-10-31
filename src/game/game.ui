@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>game</class>
  <widget class="QFrame" name="game">
@@ -12,5 +13,34 @@
   <property name="windowTitle">
    <string>Frame</string>
   </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="new_game_button">
+     <property name="text">
+      <string>New Game</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="board" name="b">
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>board</class>
+   <extends>QFrame</extends>
+   <header>board.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
 </ui>

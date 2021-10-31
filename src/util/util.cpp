@@ -1,6 +1,3 @@
 #include "util.h"
 
-util::util()
-{
-
-}
+namespace util {};  // namespace util

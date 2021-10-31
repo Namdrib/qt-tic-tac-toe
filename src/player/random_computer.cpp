@@ -1,6 +1,6 @@
-#include "random.h"
+#include "random_computer.h"
 
-random::random()
+random_computer::random_computer()
 {
 
 }

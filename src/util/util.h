@@ -1,11 +1,11 @@
 #ifndef UTIL_H
 #define UTIL_H
 
+namespace util {
+template <typename T>
+static bool in_bounds(T low, T high, T target) {
+  return target > low && target < high;
+}
+};  // namespace util
 
-class util
-{
-public:
-    util();
-};
-
-#endif // UTIL_H
+#endif  // UTIL_H
